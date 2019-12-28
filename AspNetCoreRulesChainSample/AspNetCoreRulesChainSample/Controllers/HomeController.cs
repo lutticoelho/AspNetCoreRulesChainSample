@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreRulesChainSample.Models;
+using AspNetCoreRulesChainSample.Rules.Chains;
+using AspNetCoreRulesChainSample.Model;
+using System;
+using System.Collections.Generic;
 
 namespace AspNetCoreRulesChainSample.Controllers
 {
@@ -15,9 +15,22 @@ namespace AspNetCoreRulesChainSample.Controllers
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult About([FromServices]ShoppingCartRulesChain shoppingCartRulesChain)
         {
-            ViewData["Message"] = "Your application description page.";
+            var shoopingCart = new ShoppingCart
+            {
+                CupomCode = "cupom-001",
+                StartDate = DateTime.UtcNow,
+                Items = new List<ShoppingCartItem>
+                {
+                    new ShoppingCartItem{ Id = 1, Name = "Product 1", Price = 1.00m, Quantity = 2},
+                    new ShoppingCartItem{ Id = 2, Name = "Product 2", Price = 2.00m, Quantity = 1},
+                    new ShoppingCartItem{ Id = 3, Name = "Product 3", Price = 3.50m, Quantity = 1},
+                }
+            };
+
+            shoopingCart = shoppingCartRulesChain.ApplyDiscountOnShoppingCart(shoopingCart);
+            ViewData["Message"] = $"Your discount was applied by {shoopingCart.DiscountType} rule.";
 
             return View();
         }

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RulesChain" Version="0.1.43" />
+    <PackageReference Include="RulesChain.Contracts" Version="0.1.43" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetCoreRulesChainSample.FakeRepository.Contracts\AspNetCoreRulesChainSample.FakeRepository.Contracts.csproj" />
+    <ProjectReference Include="..\AspNetCoreRulesChainSample.Model\AspNetCoreRulesChainSample.Model.csproj" />
+  </ItemGroup>
+
+</Project>
