@@ -19,14 +19,14 @@ namespace AspNetCoreRulesChainSample.Rules.ShoppingCartRules
         public override async Task Run(ApplyDiscountContext context)
         {
             // Gets 7% of discount;
-            var myDiscount = context.Context.Items.Sum(i => i.Price * 0.07M);
+            var myDiscount = context.Context.Items.Sum(i => i.Price * i.Quantity * 0.07M);
             await Next(context);
 
             // Only apply first order discount if the discount applied by the other rules are smaller than this
             if (myDiscount > context.DiscountApplied)
             {
                 context.DiscountApplied = myDiscount;
-                context.DiscountTypeApplied = "Cupom";
+                context.DiscountTypeApplied = "Coupon";
             }
         }
 
