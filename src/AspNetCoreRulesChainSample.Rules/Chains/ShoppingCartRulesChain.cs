@@ -1,9 +1,7 @@
-﻿using RulesChain;
-using AspNetCoreRulesChainSample.Model;
+﻿using AspNetCoreRulesChainSample.Model;
 using AspNetCoreRulesChainSample.Model.RulesContext;
 using AspNetCoreRulesChainSample.Rules.ShoppingCartRules;
 using System;
-using System.ComponentModel;
 using RulesChain.Contracts;
 
 namespace AspNetCoreRulesChainSample.Rules.Chains

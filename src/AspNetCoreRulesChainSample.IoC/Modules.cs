@@ -1,6 +1,5 @@
 ﻿using AspNetCoreRulesChainSample.FakeRepository;
 using AspNetCoreRulesChainSample.FakeRepository.Contracts;
-using AspNetCoreRulesChainSample.Model.RulesContext;
 using AspNetCoreRulesChainSample.Rules.Chains;
 using AspNetCoreRulesChainSample.Rules.ShoppingCartRules;
 using Microsoft.Extensions.DependencyInjection;

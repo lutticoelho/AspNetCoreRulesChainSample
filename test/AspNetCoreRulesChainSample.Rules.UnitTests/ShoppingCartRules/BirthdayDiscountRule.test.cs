@@ -29,7 +29,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
                 ClientBirthday = DateTime.Now.AddDays(daysFromUtcNow),
                 Context = new ShoppingCart
                 {
-                    CupomCode = "cupom-001",
+                    CouponCode = "coupon-001",
                     StartDate = DateTime.Now,
                     Items = new List<ShoppingCartItem>
                     {
@@ -48,7 +48,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
         }
 
         [Fact(DisplayName = "Run should apply discount if no other rule applied a higher discount")]
-        public async Task Run_Should_ApplyDiscoount_When_NoOtherRuleAppliedAHigherDiscount()
+        public async Task Run_Should_ApplyDiscount_When_NoOtherRuleAppliedAHigherDiscount()
         {
             // Arrange
             var mockRule = new Mock<IRule<ApplyDiscountContext>>();
@@ -60,7 +60,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
                 ClientBirthday = DateTime.Now,
                 Context = new ShoppingCart
                 {
-                    CupomCode = "cupom-001",
+                    CouponCode = "coupon-001",
                     StartDate = DateTime.Now,
                     Items = new List<ShoppingCartItem>
                     {
@@ -80,7 +80,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
         }
 
         [Fact(DisplayName = "Run should not apply discount if other rule applied a higher discount")]
-        public async Task Run_ShouldNot_ApplyDiscoount_When_OtherRuleAppliedAHigherDiscount()
+        public async Task Run_ShouldNot_ApplyDiscount_When_OtherRuleAppliedAHigherDiscount()
         {
             // Arrange
             var mockRule = new Mock<IRule<ApplyDiscountContext>>();
@@ -94,7 +94,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
                 DiscountTypeApplied = "Other Rule",
                 Context = new ShoppingCart
                 {
-                    CupomCode = "cupom-001",
+                    CouponCode = "coupon-001",
                     StartDate = DateTime.Now,
                     Items = new List<ShoppingCartItem>
                     {

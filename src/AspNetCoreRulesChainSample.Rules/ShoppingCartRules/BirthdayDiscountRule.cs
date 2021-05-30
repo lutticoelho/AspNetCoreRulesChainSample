@@ -18,7 +18,7 @@ namespace AspNetCoreRulesChainSample.Rules.ShoppingCartRules
             var birthDayDiscount = context.Context.Items.Sum(i => i.Price * 0.1M);
             await Next(context);
 
-            // Only apply birthday disccount if the discount applied by the other rules are smaller than this
+            // Only apply birthday discount if the discount applied by the other rules are smaller than this
             if (birthDayDiscount > context.DiscountApplied)
             {
                 context.DiscountApplied = birthDayDiscount;

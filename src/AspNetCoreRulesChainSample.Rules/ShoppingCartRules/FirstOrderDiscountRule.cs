@@ -17,7 +17,7 @@ namespace AspNetCoreRulesChainSample.Rules.ShoppingCartRules
             var myDiscount = context.Context.Items.Sum(i => i.Price * 0.05M);
             await Next(context);
 
-            // Only apply first order disccount if the discount applied by the other rules are smaller than this
+            // Only apply first order discount if the discount applied by the other rules are smaller than this
             if (myDiscount > context.DiscountApplied)
             {
                 context.DiscountApplied = myDiscount;

@@ -32,9 +32,9 @@ namespace AspNetCoreRulesChainSample.Rules.ShoppingCartRules
 
         public override bool ShouldRun(ApplyDiscountContext context)
         {
-            return !string.IsNullOrWhiteSpace(context.Context.CupomCode) 
+            return !string.IsNullOrWhiteSpace(context.Context.CouponCode) 
                 && context.Context.Items?.Count > 1 
-                && _salesRepository.IsCouponAvailable(context.Context.CupomCode);
+                && _salesRepository.IsCouponAvailable(context.Context.CouponCode);
         }
     }
 }

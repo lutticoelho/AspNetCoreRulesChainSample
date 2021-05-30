@@ -9,7 +9,7 @@ namespace AspNetCoreRulesChainSample.Model
         public DateTime StartDate { get; set; }
         public decimal Discount { get; set; }
         public string DiscountType { get; set; }
-        public string CupomCode { get; set; }
+        public string CouponCode { get; set; }
         public List<ShoppingCartItem> Items { get; set; }
     }
 }

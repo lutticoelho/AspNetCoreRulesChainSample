@@ -34,7 +34,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
             {
                 Context = new ShoppingCart
                 {
-                    CupomCode = couponValue,
+                    CouponCode = couponValue,
                     StartDate = DateTime.Now,
                     Items = new List<ShoppingCartItem>
                     {
@@ -67,7 +67,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
                 ClientBirthday = DateTime.Now,
                 Context = new ShoppingCart
                 {
-                    CupomCode = "cupom-001",
+                    CouponCode = "coupon-001",
                     StartDate = DateTime.Now,
                     Items = new List<ShoppingCartItem>
                     {
@@ -103,7 +103,7 @@ namespace AspNetCoreRulesChainSample.Rules.UnitTests.ShoppingCartRules
                 DiscountTypeApplied = "Other Rule",
                 Context = new ShoppingCart
                 {
-                    CupomCode = "cupom-001",
+                    CouponCode = "coupon-001",
                     StartDate = DateTime.Now,
                     Items = new List<ShoppingCartItem>
                     {
