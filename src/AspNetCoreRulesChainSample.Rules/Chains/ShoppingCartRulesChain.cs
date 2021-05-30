@@ -3,15 +3,23 @@ using AspNetCoreRulesChainSample.Model;
 using AspNetCoreRulesChainSample.Model.RulesContext;
 using AspNetCoreRulesChainSample.Rules.ShoppingCartRules;
 using System;
+using System.ComponentModel;
+using RulesChain.Contracts;
 
 namespace AspNetCoreRulesChainSample.Rules.Chains
 {
     public class ShoppingCartRulesChain
     {
+        private readonly IRuleChain<ApplyDiscountContext> _ruleChain;
+        public ShoppingCartRulesChain(IRuleChain<ApplyDiscountContext> ruleChain)
+        {
+            _ruleChain = ruleChain;
+        }
+
         public ShoppingCart ApplyDiscountOnShoppingCart(ShoppingCart shoppingCart)
         {
-            var shoppingCartRuleChain = new RuleChain<ApplyDiscountContext>()
-                .Use<IsValidCupomRule>()
+            var shoppingCartRuleChain = _ruleChain
+                .Use<IsValidCouponRule>()
                 .Use<BirthdayDiscountRule>()
                 .Use<FirstOrderDiscountRule>()
                 .Build();
@@ -20,7 +28,7 @@ namespace AspNetCoreRulesChainSample.Rules.Chains
             shoppingCartRuleContext.Properties["IsFirstOrder"] = true;
             shoppingCartRuleContext.ClientBirthday = DateTime.UtcNow;
             
-            shoppingCartRuleContext = shoppingCartRuleChain.Invoke(shoppingCartRuleContext);
+            shoppingCartRuleChain(shoppingCartRuleContext);
 
             shoppingCart.Discount = shoppingCartRuleContext.DiscountApplied;
             shoppingCart.DiscountType = shoppingCartRuleContext.DiscountTypeApplied;

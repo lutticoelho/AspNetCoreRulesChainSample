@@ -1,20 +1,22 @@
-﻿using AspNetCoreRulesChainSample.Model.RulesContext;
-using RulesChain;
-using System;
+﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
+using AspNetCoreRulesChainSample.Model.RulesContext;
+using RulesChain;
+using RulesChain.Contracts;
 
 namespace AspNetCoreRulesChainSample.Rules.ShoppingCartRules
 {
     public class BirthdayDiscountRule : Rule<ApplyDiscountContext>
     {
-        public BirthdayDiscountRule(Rule<ApplyDiscountContext> next) : base(next)
+        public BirthdayDiscountRule(RuleHandlerDelegate<ApplyDiscountContext> next) : base(next)
         { }
 
-        public override ApplyDiscountContext Run(ApplyDiscountContext context)
+        public override async Task Run(ApplyDiscountContext context)
         {
             // Gets 10% of discount;
             var birthDayDiscount = context.Context.Items.Sum(i => i.Price * 0.1M);
-            context = _next.Invoke(context);
+            await Next(context);
 
             // Only apply birthday disccount if the discount applied by the other rules are smaller than this
             if (birthDayDiscount > context.DiscountApplied)
@@ -22,8 +24,6 @@ namespace AspNetCoreRulesChainSample.Rules.ShoppingCartRules
                 context.DiscountApplied = birthDayDiscount;
                 context.DiscountTypeApplied = "Birthday Discount";
             }
-
-            return context;
         }
 
         public override bool ShouldRun(ApplyDiscountContext context)
