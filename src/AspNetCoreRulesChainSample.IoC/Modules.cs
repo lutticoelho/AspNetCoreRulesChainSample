@@ -5,6 +5,7 @@ using AspNetCoreRulesChainSample.Rules.Chains;
 using AspNetCoreRulesChainSample.Rules.ShoppingCartRules;
 using Microsoft.Extensions.DependencyInjection;
 using RulesChain;
+using RulesChain.Contracts;
 
 namespace AspNetCoreRulesChainSample.IoC
 {
@@ -17,10 +18,11 @@ namespace AspNetCoreRulesChainSample.IoC
 
         public static void AddRules(this IServiceCollection services)
         {
-            services.AddScoped<IsValidCupomRule>();
+            services.AddScoped<IsValidCouponRule>();
             services.AddScoped<FirstOrderDiscountRule>();
             services.AddScoped<BirthdayDiscountRule>();
             services.AddScoped<ShoppingCartRulesChain>();
+            services.AddScoped(typeof(IRuleChain<>), typeof(RuleChain<>));
         }
     }
 }

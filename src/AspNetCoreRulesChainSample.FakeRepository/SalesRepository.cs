@@ -6,11 +6,11 @@ namespace AspNetCoreRulesChainSample.FakeRepository
 {
     public class SalesRepository : ISalesRepository
     {
-        private static readonly string[] avaliableCupom = new[] { "cupom-001", "cupom-002", "cupom-003", "cupom-005" };
+        private static readonly string[] AvailableCoupons = new[] { "cupom-001", "cupom-002", "cupom-003", "cupom-005" };
 
-        public bool IsCupomAvaliable(string cupomCode)
+        public bool IsCouponAvailable(string couponCode)
         {
-            return avaliableCupom.Contains(cupomCode.ToLower());
+            return AvailableCoupons.Contains(couponCode.ToLower());
         }
     }
 }

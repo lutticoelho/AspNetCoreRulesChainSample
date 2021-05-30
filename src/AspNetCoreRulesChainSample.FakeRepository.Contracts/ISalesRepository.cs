@@ -2,6 +2,6 @@
 {
     public interface ISalesRepository
     {
-        bool IsCupomAvaliable(string cupomCode);
+        bool IsCouponAvailable(string couponCode);
     }
 }
