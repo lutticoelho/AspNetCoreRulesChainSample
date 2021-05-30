@@ -3,19 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample", "AspNetCoreRulesChainSample\AspNetCoreRulesChainSample.csproj", "{3F6E6CF6-974C-4F47-827C-04601B80EE43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreRulesChainSample", "src\AspNetCoreRulesChainSample\AspNetCoreRulesChainSample.csproj", "{3F6E6CF6-974C-4F47-827C-04601B80EE43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{550D2125-B101-4449-A139-E07C29167C78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample.Rules", "AspNetCoreRulesChainSample.Rules\AspNetCoreRulesChainSample.Rules.csproj", "{0F591546-279E-4776-9A5B-4E4FB0A8FF67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreRulesChainSample.Rules", "src\AspNetCoreRulesChainSample.Rules\AspNetCoreRulesChainSample.Rules.csproj", "{0F591546-279E-4776-9A5B-4E4FB0A8FF67}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample.IoC", "AspNetCoreRulesChainSample.IoC\AspNetCoreRulesChainSample.IoC.csproj", "{7CE54D61-211A-4B25-8D34-96480FE4BC23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreRulesChainSample.IoC", "src\AspNetCoreRulesChainSample.IoC\AspNetCoreRulesChainSample.IoC.csproj", "{7CE54D61-211A-4B25-8D34-96480FE4BC23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample.Model", "AspNetCoreRulesChainSample.Model\AspNetCoreRulesChainSample.Model.csproj", "{76775863-9678-48C6-ACEF-1B56800C5789}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreRulesChainSample.Model", "src\AspNetCoreRulesChainSample.Model\AspNetCoreRulesChainSample.Model.csproj", "{76775863-9678-48C6-ACEF-1B56800C5789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample.FakeRepository", "AspNetCoreRulesChainSample.FakeRepository\AspNetCoreRulesChainSample.FakeRepository.csproj", "{A0483BDD-6A71-4FAB-8F8C-D9C481AD0691}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreRulesChainSample.FakeRepository", "src\AspNetCoreRulesChainSample.FakeRepository\AspNetCoreRulesChainSample.FakeRepository.csproj", "{A0483BDD-6A71-4FAB-8F8C-D9C481AD0691}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample.FakeRepository.Contracts", "AspNetCoreRulesChainSample.FakeRepository.Contracts\AspNetCoreRulesChainSample.FakeRepository.Contracts.csproj", "{8438FD66-1227-41B3-82CC-EE9295A406AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreRulesChainSample.FakeRepository.Contracts", "src\AspNetCoreRulesChainSample.FakeRepository.Contracts\AspNetCoreRulesChainSample.FakeRepository.Contracts.csproj", "{8438FD66-1227-41B3-82CC-EE9295A406AF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E399FD9E-DD25-4F64-96DE-CC93658BA1A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreRulesChainSample.Rules.UnitTests", "test\AspNetCoreRulesChainSample.Rules.UnitTests\AspNetCoreRulesChainSample.Rules.UnitTests.csproj", "{30B863F8-FD30-4441-975E-22558B48B3C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +51,10 @@ Global
 		{8438FD66-1227-41B3-82CC-EE9295A406AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8438FD66-1227-41B3-82CC-EE9295A406AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8438FD66-1227-41B3-82CC-EE9295A406AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B863F8-FD30-4441-975E-22558B48B3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B863F8-FD30-4441-975E-22558B48B3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B863F8-FD30-4441-975E-22558B48B3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B863F8-FD30-4441-975E-22558B48B3C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +65,7 @@ Global
 		{76775863-9678-48C6-ACEF-1B56800C5789} = {550D2125-B101-4449-A139-E07C29167C78}
 		{A0483BDD-6A71-4FAB-8F8C-D9C481AD0691} = {550D2125-B101-4449-A139-E07C29167C78}
 		{8438FD66-1227-41B3-82CC-EE9295A406AF} = {550D2125-B101-4449-A139-E07C29167C78}
+		{30B863F8-FD30-4441-975E-22558B48B3C5} = {E399FD9E-DD25-4F64-96DE-CC93658BA1A7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8C31BBD-3BE2-4034-86FA-DF4B02D771C6}

@@ -17,9 +17,9 @@ namespace AspNetCoreRulesChainSample.Controllers
 
         public IActionResult About([FromServices]ShoppingCartRulesChain shoppingCartRulesChain)
         {
-            var shoopingCart = new ShoppingCart
+            var shoppingCart = new ShoppingCart
             {
-                CupomCode = "cupom-001",
+                CouponCode = "coupon-001",
                 StartDate = DateTime.UtcNow,
                 Items = new List<ShoppingCartItem>
                 {
@@ -29,8 +29,8 @@ namespace AspNetCoreRulesChainSample.Controllers
                 }
             };
 
-            shoopingCart = shoppingCartRulesChain.ApplyDiscountOnShoppingCart(shoopingCart);
-            ViewData["Message"] = $"Your discount was applied by {shoopingCart.DiscountType} rule.";
+            shoppingCart = shoppingCartRulesChain.ApplyDiscountOnShoppingCart(shoppingCart);
+            ViewData["Message"] = $"Your discount was applied by {shoppingCart.DiscountType} rule.";
 
             return View();
         }

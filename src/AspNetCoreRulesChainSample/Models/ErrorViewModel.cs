@@ -1,5 +1,3 @@
-using System;
-
 namespace AspNetCoreRulesChainSample.Models
 {
     public class ErrorViewModel
